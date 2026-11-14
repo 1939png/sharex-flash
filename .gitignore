@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+venv/
+env/
+
+# PyInstaller 构建中间产物
+build/
+dist/
+*.spec
+*.manifest
+
+# 运行时产物（配置与日志写入 %APPDATA%\ShareXFlash，此处为兜底）
+*.log
+config.json
+shutter.wav
+selftest_report.txt
+
+# IDE / 系统
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+desktop.ini
+.DS_Store
