@@ -4,12 +4,18 @@ setlocal
 cd /d "%~dp0"
 
 echo [1/3] 安装依赖...
-python -m pip install --upgrade pillow pyinstaller || goto :fail
+python -m pip install --upgrade pillow websocket-client pyinstaller || goto :fail
 
 echo [2/3] 打包单文件 exe（无控制台、带图标）...
 python -m PyInstaller --noconfirm --clean --onefile --noconsole ^
     --icon "assets\sharexflash.ico" ^
     --add-data "assets\sharexflash.ico;." ^
+    --hidden-import obs_recorder ^
+    --hidden-import gdi_canvas ^
+    --hidden-import spot_overlay ^
+    --hidden-import websocket ^
+    --hidden-import websocket._core ^
+    --paths "src" ^
     --name "ShareX Flash" ^
     --distpath "dist" ^
     --workpath "build" ^

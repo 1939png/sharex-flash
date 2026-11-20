@@ -14,6 +14,10 @@ dist/
 *.spec
 *.manifest
 
+# OBS 便携版（由 tools/fetch_obs.py 下载，体积过大不进仓库）
+third_party/
+release/
+
 # 运行时产物（配置与日志写入 %APPDATA%\ShareXFlash，此处为兜底）
 *.log
 config.json
